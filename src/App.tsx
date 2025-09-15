@@ -61,7 +61,7 @@ function App() {
       </div>
 
       {/* Lista de mensajes */}
-      <ul className="message-list">
+      <ul className="message-list" style={{ color: 'blue' }}>
         {messages.map((msg) => (
           <li key={msg.id}>
             <div>
