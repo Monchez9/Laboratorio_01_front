@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab1-front
+  namespace: staging
+  labels:
+    app: lab1-front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lab1-front
+  template:
+    metadata:
+      labels:
+        app: lab1-front
+    spec:
+      containers:
+        - name: lab1-front
+          image: lab1cicd.azurecr.io/lab1-front:dev  # cambia tag si usaste otro
+          ports:
+            - containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 15
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
