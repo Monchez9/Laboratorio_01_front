@@ -20,7 +20,7 @@ Para su correcto funcionamiento, se espera que sea corrido cuando su [Backend](h
 Clonar el repositorio:
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/Monchez9/Laboratorio_01_front.git
 cd LABORATORIO_01_FRONT
 ```
 
@@ -30,12 +30,10 @@ cd LABORATORIO_01_FRONT
 npm install axios
 # Instala Vitest y el plugin de Vitest para ESLint
 npm install --save-dev vitest @vitest/ui eslint-plugin-vitest
-# Instala React Testing Library y dependencias relacionadas
+# Instala React Testing Library
 npm install --save-dev @testing-library/react @testing-library/jest-dom jsdom
 # Instala ESLint y las configuraciones de TypeScript y React
 npm install --save-dev eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-react-hooks eslint-plugin-react-refresh
-# Instala dependencias para el formateo de código
-npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
 ```
 
 ## Crear archivo de entorno
@@ -55,7 +53,7 @@ Esto iniciará un servidor en [http://localhost:5173](http://localhost:5173).
 ## Ejecución de pruebas
 
 ```bash
-Copiar código
+npm run test
 ```
 
 Esto ejecutará los tests definidos en tests/App.test.tsx.
